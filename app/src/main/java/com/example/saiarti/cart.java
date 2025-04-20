@@ -47,7 +47,7 @@ public class cart extends AppCompatActivity {
                         return;
                     }
                     item.getItem().setQuantity(item.getItem().getQuantity() - item.getQuantity());
-                    sum += Double.parseDouble(item.getItem().getPrice()) * item.getQuantity();
+                    sum += Double.parseDouble(item.getItem().getPrice().split(" ")[0]) * item.getQuantity();
                     for (int j = 0; j < ItemDA.items.size(); j++) {
                         if (ItemDA.items.get(j).getId().equalsIgnoreCase(item.getItem().getId())) {
                             ItemDA.items.get(j).setQuantity(ItemDA.items.get(j).getQuantity() - item.getQuantity());
